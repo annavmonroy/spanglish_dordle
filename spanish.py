@@ -1,10 +1,17 @@
 import random
 import spanish
 
-def random_word(spanish):
-    # remove accent marks
-    with open(spanish) as f:
-        word = f.read().splitlines()
-    return random.choice(word)
+class Spanish:
 
-print(random_word('spanish.txt'))
+    def __init__(self, spanish):
+        self.spanish = spanish
+    
+    def remove_accent(self):
+        pass
+
+    def random_word(self, word):
+        with open(self.spanish) as f:
+            self.word = f.read().splitlines()
+        return random.choice(self.word)
+
+# print(random_word('english.txt'))
