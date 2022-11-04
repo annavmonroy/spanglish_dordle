@@ -1,9 +1,9 @@
 import random
 
-def random_word(english):
-    with open(english) as f:
+def random_word():
+    with open('english.txt') as f:
         words = f.read().splitlines()
     word = random.choice(words)
-    return word
+    return word.upper()
 
-print(random_word('english.txt'))
+print(random_word())
