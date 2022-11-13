@@ -3,12 +3,8 @@ import unidecode
 # only checks if guess is a valid input
 class Check_Guess:
 
-    def __init_(self, guess, order, lowercase, uppercase, words):
+    def __init__(self, guess):
         self.guess = guess
-        self.order = order
-        self.lowercase = lowercase
-        self.uppercase = uppercase
-        self.words = words
         self.check = False
 
     def check_length(self):   # length = 5
@@ -36,9 +32,9 @@ class Check_Guess:
 
         # checks spanish word bank
         with open('spanish.txt', 'rt', encoding = 'utf-8') as f:
-            words = f.read().splitlines()
-            for i in range(len(words)):
-                words[i] = unidecode.unidecode(words[i])
+            self.words = f.read().splitlines()
+            for i in range(len(self.words)):
+                self.words[i] = unidecode.unidecode(self.words[i])
             if self.guess == self.words:
                 self.check = True
         
@@ -49,3 +45,5 @@ class Check_Guess:
         # converts guess to uppercase
         self.guess = self.guess.upper()
         return f'{self.guess}'
+
+Check_Guess.check_length('blank')

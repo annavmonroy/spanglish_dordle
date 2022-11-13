@@ -1,8 +1,8 @@
 # import the random word and the guess input
 # letters for both words are in a list ex: guess = [a, b, c, d, e]?
-class English_Word:
+class Check_English_Word:
 
-    def __init(self, guess, random):
+    def __init__(self, guess, random):
         self.guess = guess # replace this with the imported guess input
         self.random = random # replace this with the imported random word
         self.green_letters = []
