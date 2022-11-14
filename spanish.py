@@ -6,7 +6,7 @@ class Get_Random_Spanish(Get_Random_English):
 
     def random_word(self):
         # reads file with accent marks
-        with open('spanish.txt', 'rt', encoding = 'utf-8') as f:
+        with open(self.file, 'rt', encoding = 'utf-8') as f:
             words = f.read().splitlines()
             # removes accent marks and tildes
             for i in range(len(words)):
@@ -14,5 +14,6 @@ class Get_Random_Spanish(Get_Random_English):
         word = random.choice(words)
         return word.upper()
 
-second_word = Get_Random_Spanish('english.txt')
+# why am i getting both english and spanish words?
+second_word = Get_Random_Spanish('spanish.txt')
 print(second_word.random_word())

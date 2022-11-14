@@ -9,7 +9,7 @@ class Check_Guess:
 
     def check_length(self):   # length = 5
         if len(self.guess) != 5:
-            raise ValueError('Invalid guess')
+            return 'Invalid guess'
 
     def check_letters(self):  # no symbols, accent marks, tildes, spaces, etc. # convert everything to uppercase
         for x in range(0, len(self.guess)):
@@ -18,8 +18,8 @@ class Check_Guess:
             self.lowercase = range(97, 122)
             self.uppercase = range(65, 90)
         
-            if self.order not in self.lowercase or self.uppercase:
-                raise ValueError('Invalid guess')
+            if self.order not in self.lowercase and self.order not in self.uppercase:
+                return 'Invalid guess'
     
     def check_word_bank(self):
         # checks if guess is in the english or spanish word bank
@@ -27,7 +27,7 @@ class Check_Guess:
         # checks english word bank
         with open('english.txt') as f:
             self.words = f.read().splitlines()
-            if self.guess == self.words:
+            if self.guess in self.words:
                 self.check = True
 
         # checks spanish word bank
@@ -35,15 +35,21 @@ class Check_Guess:
             self.words = f.read().splitlines()
             for i in range(len(self.words)):
                 self.words[i] = unidecode.unidecode(self.words[i])
-            if self.guess == self.words:
+            if self.guess in self.words:
                 self.check = True
         
         if self.check == False:
-            raise ValueError('Word not in word bank')
+            return 'Word not in word bank.'
 
     def __str__(self):
         # converts guess to uppercase
         self.guess = self.guess.upper()
         return f'{self.guess}'
 
-Check_Guess.check_length('blank')
+# checking individual methods
+    #word = Check_Guess('hgT%787')
+    #print(word.check_letters())
+
+# individual methods work but class ins't giving correct output
+# it's like it goes straight to __str__
+print(Check_Guess('toolong'))
