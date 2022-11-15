@@ -43,16 +43,6 @@ class English_Wordle:
         for letter, check in zip(self.guess, self.check_letters(self.random, self.guess)):
             self.lst.append(f"{check}{letter}{self.reset}")
         return ''.join(self.lst)
-    
-    """def alphabet_display(self, guess, random):
-        self.alphabet = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p\n',
-                    '\ta', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l\n',
-                    '\tz', 'x', 'c', 'v', 'b', 'n', 'm']
-        self.color_coded_guess = list(self.color_coding(self.random, self.guess))
-        for x, letter in enumerate(self.color_coded_guess):
-            if letter == self.alphabet[x]:
-                self.alphabet[x] = self.correct
-        return self.alphabet"""
 
     def __str__(self):
         self.num = 0
@@ -65,7 +55,6 @@ class English_Wordle:
             self.guess = input(f'Guess {self.num}: ')
             # converts input to uppercase
             self.guess = self.guess.upper()
-            #print(f'{self.alphabet_display(self.alphabet)}')
             print(f'         {self.color_coding(self.random, self.guess)}')
  
 #print(English_Wordle('', 'aback'))
