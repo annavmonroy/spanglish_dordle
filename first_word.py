@@ -22,7 +22,7 @@ class English_Wordle:
         for x, letter in enumerate(self.guess):
             if letter == self.random[x]:
                 self.checked[x] = self.correct
-                # Remove from list so it doesn't add to checked again
+                # Remove from list so it doesn't get checked again
                 self.lst_random[x] = None
        
         # checks for correct letter in wrong place
@@ -30,7 +30,7 @@ class English_Wordle:
             if self.checked[x] == '':
                 if letter in self.lst_random:
                     self.checked[x] = self.move
-                    # Remove from list so it doesn't add to checked again
+                    # Remove from list so it doesn't get checked again
                     self.lst_random.remove(letter)
                 else:
                     # letters that are not shared between the two words
@@ -43,7 +43,17 @@ class English_Wordle:
         for letter, check in zip(self.guess, self.check_letters(self.random, self.guess)):
             self.lst.append(f"{check}{letter}{self.reset}")
         return ''.join(self.lst)
- 
+    
+    """def alphabet_display(self, guess, random):
+        self.alphabet = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p\n',
+                    '\ta', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l\n',
+                    '\tz', 'x', 'c', 'v', 'b', 'n', 'm']
+        self.color_coded_guess = list(self.color_coding(self.random, self.guess))
+        for x, letter in enumerate(self.color_coded_guess):
+            if letter == self.alphabet[x]:
+                self.alphabet[x] = self.correct
+        return self.alphabet"""
+
     def __str__(self):
         self.num = 0
         self.guess = None
@@ -53,7 +63,10 @@ class English_Wordle:
         while self.num < 7 and self.guess != self.random:
             self.num += 1
             self.guess = input(f'Guess {self.num}: ')
+            # converts input to uppercase
+            self.guess = self.guess.upper()
+            #print(f'{self.alphabet_display(self.alphabet)}')
             print(f'         {self.color_coding(self.random, self.guess)}')
  
-print(English_Wordle('', 'aback'))
+#print(English_Wordle('', 'aback'))
 # print(English_Wordle(guess, random))

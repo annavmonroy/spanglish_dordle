@@ -49,9 +49,9 @@ class Check_Guess:
         #return f'{self.guess}'
  
 # checking individual methods
-word = Check_Guess('hgT%787')
-print(word.check_word_bank())
+#word = Check_Guess('hgT%787')
+#print(word.check_word_bank())
  
 # individual methods work but class ins't giving correct output
 # it's like it goes straight to __str__
-#print(Check_Guess('toolong')
+print(Check_Guess('toolong'))

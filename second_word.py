@@ -7,5 +7,4 @@ class Spanish_Wordle(English_Wordle):
     # delete string for English_Wordle and output both here for dordle
     pass
  
-print(Spanish_Wordle('', 'lapiz'))
 # print(Spanish_Wordle(guess, random))

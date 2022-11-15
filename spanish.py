@@ -15,5 +15,5 @@ class Get_Random_Spanish(Get_Random_English):
         return word.upper()
  
 # why am i getting both english and spanish words?
-second_word = Get_Random_Spanish('spanish.txt')
-print(second_word.random_word())
+#second_word = Get_Random_Spanish('spanish.txt')
+#print(second_word.random_word())
