@@ -6,6 +6,7 @@ from second_word import Spanish_Wordle
  
 first_word = Get_Random_English('english.txt')
 english_random = first_word.random_word()
+print(english_random)
 
 second_word = Get_Random_Spanish('spanish.txt')
 spanish_random = second_word.random_word()

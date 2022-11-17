@@ -1,9 +1,8 @@
-# import the random word and the guess input
-class English_Wordle:
+class Wordle:
  
     def __init__(self, guess, random):
-        self.guess = guess    # import random english word
-        self.random = random   # import user's guess
+        self.guess = guess   
+        self.random = random  
  
         # ANSI Escape Sequence for color coding and bolding
         self.correct = '\033[1m\033[92m'
