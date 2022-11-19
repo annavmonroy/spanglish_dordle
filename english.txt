@@ -2230,6 +2230,7 @@ stain
 stake
 stamp
 stand
+stare
 stark
 stars
 start

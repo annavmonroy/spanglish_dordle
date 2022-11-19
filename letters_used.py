@@ -1,21 +1,24 @@
-class English_Wordle:
- 
+import unidecode
+
+class Letters_Used():
+
     def __init__(self, guess, random):
-        self.guess = guess   
-        self.random = random  
- 
+        self.guess = guess.upper()
+        self.random = random.upper()
+        self.alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
+        self.uppercase = range(65, 90)
+
         # ANSI Escape Sequence for color coding and bolding
         self.correct = '\x1b[1m\x1b[92m'
         self.move = '\x1b[1m\x1b[35m'
         self.wrong = ''
         # When finished with a colour need to reset it back to normal text.
-        self.reset = '\x1b[0m'
-   
-    def check_letters(self, guess, random):
+        self.reset = '\x1b[0m' 
+
+    def check_letters_used(self, guess, random):
+        self.letters = []
         # converts string of random word to a list
         self.lst_random = list(self.random)
-        # empty string to store results of checked letters
-        self.checked = [''] * 5
  
         # checks for correct letter in correct place
         for x, letter in enumerate(self.guess):
@@ -34,15 +37,7 @@ class English_Wordle:
                 else:
                     # letters that are not shared between the two words
                     self.checked[x] = self.wrong
-        return self.checked
- 
-    def show_colors(self, guess, random):
-        # gives color coded word
-        self.lst = []
-        for letter, check in zip(self.guess, self.check_letters(self.guess, self.random)):
-            # check = every value in self.checked
-            # letter = every letter in the guess
-            # self.reset turns the bold off and color back to white after every letter (\x1b[0m)
-            self.lst.append(f'{check}{letter}{self.reset}')
-        # join converts lst to colored
-        return ''.join(self.lst)
+        return self.letters
+
+    def display_letters_used(self, guess, random):
+        pass

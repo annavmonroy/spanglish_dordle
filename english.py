@@ -10,6 +10,3 @@ class Get_Random_English:
             words = f.read().splitlines()
         word = random.choice(words)
         return word.upper()
- 
-#first_word = Get_Random_English('english.txt')
-#print(first_word.random_word())

@@ -13,6 +13,3 @@ class Get_Random_Spanish(Get_Random_English):
                 words[i] = unidecode.unidecode(words[i])
         word = random.choice(words)
         return word.upper()
- 
-#second_word = Get_Random_Spanish('spanish.txt')
-#print(second_word.random_word())
