@@ -1,12 +1,12 @@
 class English_Wordle:
  
-    def __init__(self, guess, random):
-        self.guess = guess   
+    def __init__(self, guess, random): 
+        self.guess = guess
         self.random = random  
  
         # ANSI Escape Sequence for color coding and bolding
         self.correct = '\x1b[1m\x1b[92m'
-        self.move = '\x1b[1m\x1b[35m'
+        self.move = '\x1b[1m\x1b[33m'
         self.wrong = ''
         # When finished with a colour need to reset it back to normal text.
         self.reset = '\x1b[0m'
