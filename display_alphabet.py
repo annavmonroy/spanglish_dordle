@@ -43,25 +43,19 @@ class Display_Alphabet():
         
         for letter in self.green_letters:
             # if statement is for double letters
-            if letter not in self.alphabet:
-                pass
-            else:
+            if letter in self.alphabet:
                 x = self.alphabet.index(letter)
                 self.alphabet[x] = f'{self.correct}{letter}{self.reset}'
 
         for letter in self.yellow_letters:
             # if statement is for double letters
-            if letter not in self.alphabet:
-                pass
-            else:
+            if letter in self.alphabet:
                 x = self.alphabet.index(letter)
                 self.alphabet[x] = f'{self.move}{letter}{self.reset}'
 
         for letter in self.red_letters:
             # if statement is for double letters
-            if letter not in self.alphabet:
-                pass
-            else:
+            if letter in self.alphabet:
                 x = self.alphabet.index(letter)
                 self.alphabet[x] = f'{self.used}{letter}{self.reset}'
         
