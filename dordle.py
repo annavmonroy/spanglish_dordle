@@ -14,6 +14,8 @@ class Dordle:
         self.guess = ''
         self.check_english = True
         self.check_spanish = True
+        self.english_guesses = []
+        self.spanish_guesses = []
  
         print('Play Spanglish Dordle!')
 
@@ -29,14 +31,17 @@ class Dordle:
                 self.guess = self.guess.upper()
 
                 if self.check_english == True:
+
                     self.clues_english = Wordle(self.guess, self.english_random)
-                    self.english_alphabet = Display_Alphabet(self.guess, self.english_random)
-                    self.english_alphabet = self.english_alphabet.check_letters_used(self.guess, self.english_random)
+                    self.english_guesses.append(self.guess)
+                    self.english_alphabet = Display_Alphabet(self.english_guesses, self.english_random)
+                    self.english_alphabet = self.english_alphabet.check_letters_used(self.english_guesses, self.english_random)
 
                 if self.check_spanish == True:
                     self.clues_spanish = Wordle(self.guess, self.spanish_random)
-                    self.spanish_alphabet = Display_Alphabet(self.guess, self.spanish_random)
-                    self.spanish_alphabet = self.spanish_alphabet.check_letters_used(self.guess, self.spanish_random)
+                    self.spanish_guesses.append(self.guess)
+                    self.spanish_alphabet = Display_Alphabet(self.spanish_guesses, self.spanish_random)
+                    self.spanish_alphabet = self.spanish_alphabet.check_letters_used(self.spanish_guesses, self.spanish_random)
 
                 print('\tEnglish Word: \tSpanish Word:')
                 print('\t   ', self.clues_english.show_colors(self.english_random, self.guess), '\t   ', self.clues_spanish.show_colors(self.spanish_random, self.guess))
