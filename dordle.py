@@ -1,6 +1,7 @@
 from wordle import Wordle
 from valid_input import Valid_Input
 from display_alphabet import Display_Alphabet
+from instructions import Instructions
 
 class Dordle:
 
@@ -16,8 +17,9 @@ class Dordle:
         self.check_spanish = True
         self.english_guesses = []
         self.spanish_guesses = []
- 
-        print('Play Spanglish Dordle!')
+
+        self.instructions = Instructions()
+        self.instructions = self.instructions.display_instructions()
 
         # game keeps going until correct answer or runs out of guesses (7)
         while self.num < 8 and (self.guess != self.english_random or self.guess != self.spanish_random):
