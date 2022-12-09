@@ -1,18 +1,35 @@
 import unidecode
  
 class Check_Guess:
+    """Checks user input against sevral parameters
+    """
 
     def __init__(self, guess):
+        """Initializes variable
+
+        Args:
+            guess (str): user input
+        """
         self.guess = guess
         self.check = False
  
     def check_length(self):
+        """Checks input has length of 5
+
+        Returns:
+            boolean: If lenth 5 then True, else False
+        """
         if len(self.guess) != 5:
             return False
         else:
             return True
  
-    def check_for_letters(self):  
+    def check_for_letters(self):
+        """Checks all characters in input are letters
+
+        Returns:
+            boolean: If all characters are letters then True, else False
+        """
         # no symbols, accent marks, tildes, spaces, etc.
         self.characters = []
         # ascii range for lowercase and uppercase letters
@@ -32,6 +49,11 @@ class Check_Guess:
         return True
    
     def check_word_bank(self):
+        """Checks input is in either the English or Spanish word bank
+
+        Returns:
+            boolean: If input is in either word bank then True, else False
+        """
         # converts guess to lowercase to compare with lowercase words in word bank
         self.guess = self.guess.lower()
 

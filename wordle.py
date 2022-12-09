@@ -1,6 +1,14 @@
 class Wordle:
+    """Figures out if the letters of guess are in the right place compared to the random word generated
+    """
  
-    def __init__(self, guess, random): 
+    def __init__(self, guess, random):
+        """Initializes variables
+
+        Args:
+            guess (str): user input
+            random (str): 5 letter random word (could be English or Spanish one)
+        """
         self.guess = guess
         self.random = random  
  
@@ -12,6 +20,15 @@ class Wordle:
         self.reset = '\x1b[0m'
    
     def check_letters(self, guess, random):
+        """Identifies which letters are used, which are in the right place, and which are in the wrong place
+
+        Args:
+            guess (str): user input
+            random (str): 5 letter random word (could be English or Spanish one)
+
+        Returns:
+            list: list with either color coding sequence or none, corresponding to the order of letters in guess
+        """
         # converts string of random word to a list
         self.lst_random = list(self.random)
         # empty string to store results of checked letters
@@ -37,6 +54,15 @@ class Wordle:
         return self.checked
  
     def show_colors(self, guess, random):
+        """Puts the guess, color coding sequence, and reset together
+
+        Args:
+            guess (str): user input
+            random (str): 5 letter random word (could be English or Spanish one)
+
+        Returns:
+            str: the guess with color coded letters
+        """
         # gives color coded word
         self.lst = []
         for letter, check in zip(self.guess, self.check_letters(self.guess, self.random)):

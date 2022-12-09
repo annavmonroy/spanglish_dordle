@@ -1,6 +1,14 @@
 class Display_Alphabet():
+    """Displays the letters used in the game
+    """
 
     def __init__(self, guesses_lst, random):
+        """Initializes variables
+
+        Args:
+            guesses_lst (lst): user input in a list format
+            random (str): random 5 letter word (in English or Spanish)
+        """
         self.guesses_lst = guesses_lst
         self.random = random.upper()
         self.alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -14,6 +22,15 @@ class Display_Alphabet():
         self.reset = '\x1b[0m' 
 
     def check_letters_used(self, guesses_lst, random):
+        """checks and displays letters used
+
+        Args:
+            guesses_lst (lst): user input in a list format
+            random (str): random 5 letter word (in English or Spanish)
+
+        Returns:
+            str: alphabet with color coded letters
+        """
         self.green_letters = []
         self.yellow_letters = []
         self.red_letters = []
