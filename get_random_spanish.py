@@ -1,6 +1,6 @@
 import random
 import unidecode
-from english import Get_Random_English
+from get_random_english import Get_Random_English
  
 class Get_Random_Spanish(Get_Random_English):
     """Generates a random five letter word in Spanish 

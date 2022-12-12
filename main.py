@@ -1,5 +1,5 @@
-from english import Get_Random_English
-from spanish import Get_Random_Spanish
+from get_random_english import Get_Random_English
+from get_random_spanish import Get_Random_Spanish
 from dordle import Dordle
 
 # gets random english word

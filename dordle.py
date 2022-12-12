@@ -4,7 +4,7 @@ from display_alphabet import Display_Alphabet
 from instructions import Instructions
 
 class Dordle:
-    """User Intergface of the game that puts it together into a Dordle
+    """User interface of the game that puts it together into a Dordle
     """
 
     def __init__(self, guess, english_random, spanish_random):
